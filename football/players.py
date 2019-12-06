@@ -41,5 +41,20 @@ class Quarterback(Player):
         score = self.completed_passes - (2 * self.interceptions)
         return score
 
+ class Defensive(Player):
+    '''parameters specific to a Defender
+    '''
+    def __init__(self, name=None, yards=130, touchdowns=5, completed_passes=20,
+                     interceptions=4, safety=None, field_goals=None):
+        super().__init__(name=name, yards=yards, touchdowns=touchdowns,
+                             safety=safety, interceptions=interceptions)
+            self.tackle = tackle
+
+    def def_tackle(self):
+    '''I know nothing about football so this is super random
+    '''
+    tackle_down = self.tackle + (4 * self.interceptions)
+    return tackle_down
+
 # TODO - refine the default player stats and/or make a defensive player default
 # with number of tackles, sacks, interceptions etc.
